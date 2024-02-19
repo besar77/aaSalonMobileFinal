@@ -9,42 +9,45 @@ import {
 } from "react-native";
 import Colors from "../../Utils/Colors";
 import Logo from "../../../assets/Images/Logo/logoNavbar.png";
+import LogoGold from "../../../assets/Images/Logo/logo2Gold.png";
 
 const Login = () => {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
+  const [password_confirmed, setPassword_confirmed] = useState("");
 
   return (
     <View
       style={{
         display: "flex",
         alignItems: "center",
+        justifyContent:'center',
         height: "100%",
-        backgroundColor: Colors.GOLD,
+        backgroundColor: Colors.BLACK,
       }}
     >
-      <Image source={Logo} style={textStyles.image} />
+      <Image source={LogoGold} style={textStyles.image} />
       <Text style={textStyles.headerTitle}>Login</Text>
       <View style={textStyles.view}>
-        <Text style={{ fontWeight: "500" }}>Phone</Text>
+        <Text style={{ fontFamily:'outfit-md',color: Colors.GOLD, marginBottom:4, fontSize:14 }}>Phone</Text>
         <TextInput
           style={textStyles.inputsDefault}
           value={password}
           secureTextEntry={true}
           onChangeText={(text) => setPhone(text)}
         />
-        <Text style={{ fontWeight: "500" }}>Password</Text>
+        <Text style={{ fontFamily:'outfit-md',color: Colors.GOLD, marginBottom:4, fontSize:14 }}>Password</Text>
         <TextInput
           style={textStyles.inputsDefault}
+          value={password}
           secureTextEntry={true}
-          value={password_confirmed}
-          onChangeText={(text) => setPasswordConfirm(text)}
+          onChangeText={(text) => setPhone(text)}
         />
         <TouchableOpacity
           style={textStyles.buttons}
           onPress={() => console.log("Btn Clicked")}
         >
-          <Text style={{ color: "white", textAlign: "center" }}>Login</Text>
+          <Text style={{ color:Colors.BLACK,textAlign:'center',fontFamily:'outfit-md',fontSize:16 }}>Login</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -55,7 +58,6 @@ const textStyles = StyleSheet.create({
   image: {
     width: 100,
     height: 100,
-    marginTop: 70,
   },
   view: {
     marginTop: 15,
@@ -64,7 +66,8 @@ const textStyles = StyleSheet.create({
   },
   headerTitle: {
     fontSize: 24,
-    fontFamily: "sans-serif",
+    fontFamily:'outfit-md',
+    color:Colors.GOLD,
     textAlign: "center",
     marginTop: 30,
   },
@@ -74,16 +77,16 @@ const textStyles = StyleSheet.create({
     paddingHorizontal: 10,
     marginBottom: 5,
     borderWidth: 2,
-    borderColor: Colors.BLACK,
-    borderRadius: 13,
+    borderColor: Colors.GOLD,
+    borderRadius: 10,
   },
   buttons: {
     padding: 10,
     textAlign: "center",
     paddingHorizontal: 50,
     marginTop: 20,
-    backgroundColor: "black",
-    borderRadius: 15,
+    backgroundColor: Colors.GOLD,
+    borderRadius: 13,
   },
 });
 

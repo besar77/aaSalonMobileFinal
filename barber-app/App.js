@@ -4,6 +4,7 @@ import Register from "./App/Screens/LoginScreens/Register";
 import { NavigationContainer } from "@react-navigation/native";
 import TabNavigation from "./App/Screens/Navigations/TabNavigation";
 import { useFonts } from "expo-font";
+import Login from "./App/Screens/LoginScreens/Login";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -15,10 +16,11 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
-        <NavigationContainer>
+        {/* <NavigationContainer>
           <TabNavigation />
-        </NavigationContainer>
-        {/* <Register /> */}
+        </NavigationContainer> */}
+        <Register />
+        {/* <Login /> */}
         <StatusBar style="light" />
       </View>
     </SafeAreaView>
