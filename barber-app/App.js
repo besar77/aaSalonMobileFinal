@@ -3,6 +3,7 @@ import { StyleSheet, View, SafeAreaView } from "react-native";
 import Register from "./App/Screens/LoginScreens/Register";
 import { NavigationContainer } from "@react-navigation/native";
 import TabNavigation from "./App/Screens/Navigations/TabNavigation";
+import Login from "./App/Screens/LoginScreens/Login";
 import { useFonts } from "expo-font";
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
           <TabNavigation />
         </NavigationContainer>
         {/* <Register /> */}
+        {/* <Login /> */}
         <StatusBar style="light" />
       </View>
     </SafeAreaView>

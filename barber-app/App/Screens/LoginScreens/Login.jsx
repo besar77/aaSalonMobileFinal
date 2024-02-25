@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import Colors from "../../Utils/Colors";
 import Logo from "../../../assets/Images/Logo/logoNavbar.png";
+import LogoGold from "../../../assets/Images/Logo/logo2Gold.png";
 
 const Login = () => {
   const [phone, setPhone] = useState("");
@@ -20,31 +21,40 @@ const Login = () => {
         display: "flex",
         alignItems: "center",
         height: "100%",
-        backgroundColor: Colors.GOLD,
+        backgroundColor: Colors.BLACK,
       }}
     >
-      <Image source={Logo} style={textStyles.image} />
+      <Image source={LogoGold} style={textStyles.image} />
       <Text style={textStyles.headerTitle}>Login</Text>
       <View style={textStyles.view}>
-        <Text style={{ fontWeight: "500" }}>Phone</Text>
+        <Text style={textStyles.labels}>Phone</Text>
         <TextInput
           style={textStyles.inputsDefault}
-          value={password}
+          value={phone}
           secureTextEntry={true}
           onChangeText={(text) => setPhone(text)}
         />
-        <Text style={{ fontWeight: "500" }}>Password</Text>
+        <Text style={textStyles.labels}>Password</Text>
         <TextInput
           style={textStyles.inputsDefault}
           secureTextEntry={true}
-          value={password_confirmed}
-          onChangeText={(text) => setPasswordConfirm(text)}
+          value={password}
+          onChangeText={(text) => setPassword(text)}
         />
         <TouchableOpacity
           style={textStyles.buttons}
           onPress={() => console.log("Btn Clicked")}
         >
-          <Text style={{ color: "white", textAlign: "center" }}>Login</Text>
+          <Text
+            style={{
+              color: Colors.BLACK,
+              textAlign: "center",
+              fontFamily: "outfit-md",
+              fontSize: 16,
+            }}
+          >
+            Login
+          </Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -64,9 +74,10 @@ const textStyles = StyleSheet.create({
   },
   headerTitle: {
     fontSize: 24,
-    fontFamily: "sans-serif",
+    fontFamily: "outfit-md",
     textAlign: "center",
     marginTop: 30,
+    color: Colors.GOLD,
   },
   inputsDefault: {
     width: 300,
@@ -74,16 +85,22 @@ const textStyles = StyleSheet.create({
     paddingHorizontal: 10,
     marginBottom: 5,
     borderWidth: 2,
-    borderColor: Colors.BLACK,
-    borderRadius: 13,
+    borderColor: Colors.GOLD,
+    borderRadius: 10,
   },
   buttons: {
     padding: 10,
     textAlign: "center",
     paddingHorizontal: 50,
     marginTop: 20,
-    backgroundColor: "black",
-    borderRadius: 15,
+    backgroundColor: Colors.GOLD,
+    borderRadius: 13,
+  },
+  labels: {
+    color: Colors.GOLD,
+    fontFamily: "outfit-md",
+    fontSize: 14,
+    marginBottom: 5,
   },
 });
 
